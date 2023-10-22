@@ -43,7 +43,8 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run start
+  cd backend
+  npm start
 ```
 Start the Client
 

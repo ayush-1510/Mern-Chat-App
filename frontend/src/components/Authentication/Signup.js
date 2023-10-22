@@ -41,6 +41,7 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
+      setPicLoading(false);
       return;
     }
     console.log(name, email, password, pic);
@@ -61,6 +62,7 @@ const Signup = () => {
         config
       );
       console.log(data);
+      await localStorage.setItem("userInfo", JSON.stringify(data));
       toast({
         title: "Registration Successful",
         status: "success",
@@ -69,9 +71,9 @@ const Signup = () => {
         position: "bottom",
       });
       
-      await localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
       history.push("/chats");
+      window.location.reload();
     } catch (error) {
       toast({
         title: "Error Occured!",

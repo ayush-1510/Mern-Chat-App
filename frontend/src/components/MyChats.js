@@ -31,7 +31,7 @@ const MyChats = ({ fetchAgain }) => {
         title: "Error Occured!",
         description: "Failed to Load the chats",
         status: "error",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "bottom-left",
       });
@@ -39,10 +39,15 @@ const MyChats = ({ fetchAgain }) => {
   };
 
   useEffect(() => {
+    console.log(localStorage.getItem("userInfo"));
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
+    // setUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
+    console.log(chats[0]);
     // eslint-disable-next-line
   }, [fetchAgain]);
+
+
 
   return (
     <Box
@@ -99,6 +104,7 @@ const MyChats = ({ fetchAgain }) => {
                 borderRadius="lg"
                 key={chat._id}
               >
+              
                 <Text>
                   {!chat.isGroupChat
                     ? getSender(loggedUser, chat.users)

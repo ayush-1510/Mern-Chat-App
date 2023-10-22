@@ -22,7 +22,7 @@ const ProfileModal = ({ user, children }) => {
           <span onClick={onOpen}>{children}</span>
         ) : (
           <IconButton
-            d={{ base: "flex" }}
+            display={{ base: "flex" }}
             icon={<ViewIcon />}
             onClick={onOpen}
           />
@@ -48,7 +48,7 @@ const ProfileModal = ({ user, children }) => {
               <Image
                 borderRadius="full"
                 boxSize="150px"
-                src={user.picture}
+                src={user.pic}
                 alt={user.name}
               />
               <Text

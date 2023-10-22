@@ -63,23 +63,12 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         title: "Error Occured!",
         description: "Failed to Load the Messages",
         status: "error",
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
         position: "bottom",
       });
     }
   };
-
-  useEffect(() => {
-    socket = io(ENDPOINT);
-    socket.emit("setup", user);
-    socket.on("connection", () => setSocketConnected(true));
-    socket.on("typing", () => setIsTyping(true));
-    socket.on("stop typing", () => setIsTyping(false));
-
-    // eslint-disable-next-line
-  }, []);
-
 
   const sendMessage = async (event) => {
     if (event.key === "Enter" && newMessage) {
@@ -100,20 +89,30 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
           config
         );
-        socket.emit("newMessage", data);
+        socket.emit("new message", data);
         setMessages([...messages, data]);
       } catch (error) {
         toast({
           title: "Error Occured!",
           description: "Failed to send the Message",
           status: "error",
-          duration: 5000,
+          duration: 2000,
           isClosable: true,
           position: "bottom",
         });
       }
     }
   };
+
+  useEffect(() => {
+    socket = io(ENDPOINT);
+    socket.emit("setup", user);
+    socket.on("connected", () => setSocketConnected(true));
+    socket.on("typing", () => setIsTyping(true));
+    socket.on("stop typing", () => setIsTyping(false));
+
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
     fetchMessages();
@@ -123,17 +122,17 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   }, [selectedChat]);
 
   useEffect(() => {
-    socket.on("message received", (newMessageReceived) => {
+    socket.on("message recieved", (newMessageRecieved) => {
       if (
         !selectedChatCompare || // if chat is not selected or doesn't match current chat
-        selectedChatCompare._id !== newMessageReceived.chat._id
+        selectedChatCompare._id !== newMessageRecieved.chat._id
       ) {
-        if (!notification.includes(newMessageReceived)) {
-          setNotification([newMessageReceived, ...notification]);
+        if (!notification.includes(newMessageRecieved)) {
+          setNotification([newMessageRecieved, ...notification]);
           setFetchAgain(!fetchAgain);
         }
       } else {
-        setMessages([...messages, newMessageReceived]);
+        setMessages([...messages, newMessageRecieved]);
       }
     });
   });
@@ -174,7 +173,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             alignItems="center"
           >
             <IconButton
-              d={{ base: "flex", md: "none" }}
+              display={{ base: "flex", md: "none" }}
               icon={<ArrowBackIcon />}
               onClick={() => setSelectedChat("")}
             />
@@ -230,6 +229,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             >
               {istyping ? (
                 <div>
+                  typing...
                   {/* <Lottie
                     options={defaultOptions}
                     // height={50}
@@ -243,7 +243,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               <Input
                 variant="filled"
                 bg="#E0E0E0"
-                placeholder="Enter a message.."
+                placeholder="Enter a message..."
                 value={newMessage}
                 onChange={typingHandler}
               />

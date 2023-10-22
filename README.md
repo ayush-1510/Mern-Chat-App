@@ -73,6 +73,10 @@ Start the Client
 ![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Ss/viewing-other-profile.png)
 ## Made By
 
-- [@ayush-1510](https://github.com/ayush-1510)
+- **Ayush Srivastava**
+  - University: Indian Institute of Technology, Kharagpur
+  - Department: Chemical Engineering
+  - GitHub: [@ayush-1510](https://github.com/ayush-1510)
+
 
   

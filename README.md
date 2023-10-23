@@ -85,20 +85,20 @@ The client and server will be up and running, and you can access the application
 # Features
 
 ### Authenticaton
-![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Ss/login.png)
-![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Ss/signup.png)
+![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Screenshots/login.png)
+![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Screenshots/signup.png)
 ### Real Time Chatting with Typing indicators
-![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Ss/real-time.png)
+![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Screenshots/real-time.png)
 ### One to One chat
-![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Ss/mainscreen.png)
+![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Screenshots/mainscreen.png)
 ### Search Users
-![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Ss/search.png)
+![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Screenshots/search.png)
 ### Create Group Chats
-![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Ss/newgroup.png)
+![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Screenshots/newgroup.png)
 ### Add or Remove users from group
-![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Ss/add-remove.png)
+![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Screenshots/add-remove.png)
 ### View Other user Profile
-![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Ss/viewing-other-profile.png)
+![](https://github.com/ayush-1510/Mern-Chat-App/blob/master/Screenshots/viewing-other-profile.png)
 ## Made By
 
 - **Ayush Srivastava**

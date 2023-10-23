@@ -11,44 +11,75 @@ Uses Socket.io for real time communication and stores user details in encrypted 
 
 **Database:** Mongo DB
   
-## Run Locally
+## Getting Started
 
-Clone the project
+Follow the steps below to run this project on your local machine.
 
-```bash
-  git clone https://github.com/ayush-1510/Mern-Chat-App
-```
+### Prerequisites
 
-Go to the project directory
+Before you begin, make sure you have the following software installed on your system:
 
-```bash
-  cd Mern-Chat-App
-```
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/downloads) 
+- [Node.js](https://nodejs.org/en) 
 
-Install dependencies
+### Installation
 
-```bash
-  npm install
-```
+1. Clone the project to your local machine using the following command in your VS Code terminal:
 
-```bash
-  cd frontend/
-  npm install
-```
+    ```bash
+    git clone https://github.com/ayush-1510/Mern-Chat-App
+    ```
 
-Start the server
+2. Navigate to the project directory:
 
-```bash
-  cd backend
-  npm start
-```
-Start the Client
+    ```bash
+    cd Mern-Chat-App
+    ```
 
-```bash
-  //open new terminal
-  cd frontend
-  npm start
-```
+3. Install server dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Now, navigate to the `frontend` directory:
+
+    ```bash
+    cd frontend
+    ```
+
+5. Install client dependencies:
+
+    ```bash
+    npm install
+    ```
+
+### Running the Server
+
+6. Start the server by navigating to the `backend` directory:
+
+    ```bash
+    cd backend
+    npm start
+    ```
+
+### Running the Client
+
+7. In a new terminal window, navigate to the `frontend` directory:
+
+    ```bash
+    cd frontend
+    ```
+
+8. Start the client application:
+
+    ```bash
+    npm start
+    ```
+
+The client and server will be up and running, and you can access the application in your web browser.
+
 
   
 # Features
